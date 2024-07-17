@@ -1,7 +1,7 @@
 const fetchQR = async () => {
     try {
         const inputURL = document.querySelector('input[name="url"]').value;
-        const response = await fetch('https://q-rcode-generator-snowy.vercel.app/api/qr/generateqr', {
+        const response = await fetch('qr-generator-api.vercel.app/api/qr/generateqr', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
