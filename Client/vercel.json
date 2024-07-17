@@ -1,8 +1,12 @@
 {
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "/",
             "dest": "/pages/HomePage/Home.html"
+        },
+        {
+            "src": "/assets/(.*)",
+            "dest": "/assets/$1"
         }
     ]
 }
