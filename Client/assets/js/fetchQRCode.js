@@ -1,7 +1,7 @@
 const fetchQR = async () => {
     try {
         const inputURL = document.querySelector('input[name="url"]').value;
-        const response = await fetch('qr-generator-api.vercel.app/api/qr/generateqr', {
+        const response = await fetch('https://qr-generator-api.vercel.app/api/qr/generateqr', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ const fetchQR = async () => {
         console.error('Fetch QR failed:', error);
     } finally {
         const loaderimg = document.querySelector('.loaderimg');
-        loaderimg.style.display = 'none';
+        loaderimg.style.display = 'block';
     }
 
 
@@ -38,14 +38,17 @@ const handleSubmit = async (e) => {
             setTimeout(() => {
                 inputURL.classList.remove('error')
             }, 1000)
+            loaderimg.style.display = 'none';
         } else {
             loaderimg.style.display = 'block'; // Show loader
             const imagesrc = document.querySelector('.qrimg')
             const data = await fetchQR();
             imagesrc.src = data.url;
+            loaderimg.style.display = 'none';
         }
     } catch (error) {
         console.error('Handle submit failed:', error);
+        loaderimg.style.display = 'block';
     }
-    loaderimg.style.display = 'none'; // Hide loader
+    // loaderimg.style.display = 'none'; // Hide loader
 }
