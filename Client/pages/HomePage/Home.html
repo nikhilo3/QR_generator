@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="./homePage.css">
+</head>
+
+<body>
+    <div class="main w-full">
+        <div class="heading w-full flex justify-center items-center pt-[4rem] pb-[4rem]">
+            <h1 class="text-white text-3xl">QR Code Generator App</h1>
+        </div>
+
+        <div class="containers flex justify-center items-center px-[5rem] py-[2rem]">
+            <div class="outerbox w-[40%] bg-white text-black p-[1.5rem] rounded-lg">
+                <form class="flex justify-center flex-col gap-[1rem]" onsubmit="handleSubmit(event)">
+                    <span class="font-semibold leading-8">Enter your text or URL</span>
+                    <input type="text" name="url" id="url"
+                        class="border-solid border-2 border-slate-500 h-[2.3rem] rounded-lg" />
+                    <div class="loader w-full overflow-hidden flex justify-center">
+                        <img src="../../assets/images/icons8-loading-infinity.gif" class="loaderimg hidden">
+                    </div>
+                    <div class="qrshow w-full overflow-hidden flex justify-center">
+                        <img src="" class="qrimg p-[10px]">
+                    </div>
+                    <button type="submit" class="btnsubmit mt-[1rem] ">Generate QR Code</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/fetchQRCode.js"></script>
+</body>
+
+</html>
