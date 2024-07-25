@@ -33,3 +33,10 @@
         border-color: red;
     }
 }
+
+@media (min-width:640px){
+    .containers{
+        padding-right: 5rem;
+        padding-left: 5rem;
+    }
+}

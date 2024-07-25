@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="/pages/HomePage/homePage.css">
+    <!-- <link rel="stylesheet" href="./homePage.css"> -->
 </head>
 
 <body>
@@ -17,8 +18,8 @@
             <h1 class="text-white text-3xl">QR Code Generator App</h1>
         </div>
 
-        <div class="containers flex justify-center items-center px-[5rem] py-[2rem]">
-            <div class="outerbox w-[40%] bg-white text-black p-[1.5rem] rounded-lg">
+        <div class="containers flex justify-center items-center px-[2rem] py-[2rem]">
+            <div class="outerbox w-[90%] max-w-[500px] bg-white text-black p-[1.5rem] rounded-lg">
                 <form class="flex justify-center flex-col gap-[1rem]" onsubmit="handleSubmit(event)">
                     <span class="font-semibold leading-8">Enter your text or URL</span>
                     <input type="text" name="url" id="url"
@@ -30,11 +31,12 @@
                         <img src="" class="qrimg p-[10px]">
                     </div>
                     <button type="submit" class="btnsubmit mt-[1rem] ">Generate QR Code</button>
+                    <button class="btndownload mt-[1rem] hidden btnsubmit" onclick="downloadQR()">download qr</button>
                 </form>
             </div>
         </div>
     </div>
-
+    
     <script src="../../assets/js/fetchQRCode.js"></script>
 </body>
 
